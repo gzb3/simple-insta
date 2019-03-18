@@ -55,6 +55,10 @@ import {Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChan
                 
             </article>
         </div>
+        
+        <div *ngIf="error" class="d-flex justify-content-center m-5">
+            <h2>{{error}}</h2>
+        </div>
     `
 })
 
@@ -62,6 +66,7 @@ export class DisplayPostComponent implements OnChanges{
     @Input() post;
     @Input() comments;
     @Input() author;
+    @Input() error;
     @Output() like= new EventEmitter<any>();
     @Output() comment= new EventEmitter<any>();
 

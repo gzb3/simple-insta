@@ -13,6 +13,7 @@ import {Comment}from '../../models/comment.model';
         <app-display-post [post]="post" 
                           [comments]="comments"
                           [author]="post?.author"
+                          [error]="error"
                           (comment)="onComment($event)"
                           (like)="onLike($event)"
         ></app-display-post>
@@ -21,6 +22,7 @@ import {Comment}from '../../models/comment.model';
 
 export class PostComponent implements OnDestroy,OnInit,OnChanges{
     comments:Comment[]=[];
+    error;
     postId;
     _sub;_sub2;_sub3;
     post:Post;
@@ -29,6 +31,7 @@ export class PostComponent implements OnDestroy,OnInit,OnChanges{
         this._sub2=this.data.newComment.subscribe(comment=>{this.comments.push(JSON.parse(comment));this.comments=this.comments.slice();console.log(this.comments)});
         this._sub=this.data.post.subscribe(post=>{this.post=JSON.parse(post)});
         this._sub3=this.data.comments.subscribe(comments=>{this.comments=comments});
+        this.data.error.subscribe(err=>this.error=err);
     }
     ngOnInit(){
         this.route.params.subscribe(param=>{

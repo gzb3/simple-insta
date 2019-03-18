@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Socket} from 'ngx-socket-io';
 import {UserService} from './user.service';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class DataService {
@@ -20,19 +21,19 @@ export class DataService {
     loggedUserId;
 
 
-    constructor(private socket:Socket,private userService:UserService) {
+    constructor(private socket:Socket,private userService:UserService,private router:Router) {
         if (userService.getloggedUser())
         this.loggedUserId=userService.getloggedUser().id
     }
 
     setLike(postId,postAuthorId){
             let liker=this.userService.getloggedUser();
-            this.socket.emit('setLike',{postId:postId,likerId:liker.id,likerUsername:liker.username,authorId:postAuthorId})
+           liker ? this.socket.emit('setLike',{postId:postId,likerId:liker.id,likerUsername:liker.username,authorId:postAuthorId}) : this.router.navigate(['/login']);
     }
 
     addComment(postId,text,authorId){
         let commenter=this.userService.getloggedUser();
-        this.socket.emit('addComment',{postId:postId,text:text,commenterId:commenter.id,commenterUsername:commenter.username,authorId:authorId});
+        commenter ? this.socket.emit('addComment',{postId:postId,text:text,commenterId:commenter.id,commenterUsername:commenter.username,authorId:authorId}) : this.router.navigate(['/login']);
     }
 
     getComments(postId){
@@ -46,18 +47,12 @@ export class DataService {
     }
 
     getPost(fetcher,id){ ///if user is logged in send its id to determine if he already liked post that he is requesting
-       // alert('aaaaaa');
-
         if(fetcher) this.socket.emit('getPost',{fetcherId:fetcher.id,id:id});
         else this.socket.emit('getPost',{fetcherId:null,id:id});
     }
 
     follow(followId){
-        if(this.loggedUserId){
-            this.socket.emit('follow',{userId:this.loggedUserId,userUsername:this.userService.getloggedUser().username, followId:followId});
-        }else{
-            //navigate to login
-        }
+        this.loggedUserId ? this.socket.emit('follow',{userId:this.loggedUserId,userUsername:this.userService.getloggedUser().username, followId:followId}) : this.router.navigate(['/login']);
     }
 
     addPost(uId,caption,imageName,buffer){

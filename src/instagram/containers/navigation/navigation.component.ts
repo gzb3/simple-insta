@@ -42,7 +42,7 @@ import {of} from 'rxjs';
                             <button *ngIf="this.alert==='' " style="height: 30px" (click)="showDiv()" class="btn btn-link" ><img style="width: 30px" src="./assets/like.png"/></button>
                             <button *ngIf="this.alert!=='' " style="height: 30px" (click)="showDiv()" class="btn btn-link" ><img style="width: 30px" src="./assets/notif-alert.png"/></button>
 
-                            <input type="file" class=" inputfile" name="file" accept="image/*" id="file" (change)="onFileSelected($event)">
+                            <input type="file" class="inputfile" name="file" accept="image/*" id="file" (change)="onFileSelected($event)">
                             <label for="file" class="nav-link mb-0" ><img src="assets/add.png"/></label>
                           
                             <button (click)="logOut()" class="btn btn-link" >Log Out</button>
@@ -65,7 +65,6 @@ import {of} from 'rxjs';
                             </div>
                 </div>
             </div>
-            
         </div>
         
         <div class="notificationsDiv" *ngIf="this.showNotifications"  >
@@ -89,7 +88,7 @@ export class NavigationComponent implements  OnDestroy {
         if(localStorage.getItem('user'))
             this.loggedUser=JSON.parse(localStorage.getItem('user'));
 
-        this._subAlert=this.userService.alert.subscribe(a=>{this.alert=a;console.log(a)});
+        this._subAlert=this.userService.alert.subscribe(a=>{this.alert=a});
 
         router.events.forEach((event) => {
             if(event instanceof NavigationEnd) {
@@ -140,6 +139,7 @@ export class NavigationComponent implements  OnDestroy {
     }
 
     addPost(c){
+        //uopste se ne poziva funkcija drugi put put
         let caption=c.value;
         let reader=new FileReader();
         reader.onload=(e)=> {
