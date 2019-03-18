@@ -1,0 +1,42 @@
+
+.notif-div{
+    position: absolute;
+    top: 70px;
+    right: 15%;
+    overflow-y: auto;
+    height:400px ;
+    border: 2px solid #d8dada;
+    background-color: white;
+    border-radius: 7px;
+    z-index: 2;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid lightgray;
+    text-decoration: none;
+    width: 500px;
+}
+a:hover {
+    text-decoration: none;
+    background-color: whitesmoke;
+
+}
+a{
+    width: 100%;
+    padding: 14px 25px;
+    display: inline-block;
+}
+
+.avatar{
+    height: 32px;
+    width: 32px;
+}
+.small{
+    height: 32px;
+    width: 32px;
+}

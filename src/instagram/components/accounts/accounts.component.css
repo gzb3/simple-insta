@@ -1,0 +1,22 @@
+aside{
+    flex: 1;
+}
+
+article{
+    flex: 4;
+    border-left: 1px solid lightgray;
+
+}
+.container{
+    max-width:950px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.list-group-item{
+    border: 0;
+}

@@ -1,0 +1,21 @@
+.suggestions-div{
+    position: absolute;
+    right: -2px;
+    width: 255px;
+    top: 20px;
+    overflow-y: auto;
+    max-height:300px ;
+    border: 2px solid #d8dada;
+    background-color: white;
+    border-radius: 7px;
+    z-index: 2;
+}
+
+.suggestion-avatar{
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+a{
+    text-decoration: none;
+}

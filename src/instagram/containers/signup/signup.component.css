@@ -1,0 +1,13 @@
+.c{
+    max-width: 500px;
+    border: 1px solid lightgray;
+    padding: 30px 50px 50px 50px;
+    margin: 50px;
+}
+body{
+    background-color: honeydew;
+}
+img{
+    margin-left: 20%;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,54 @@
+.input-sm{
+    height: 30px;
+    width: 250px;
+}
+li{
+    margin-right: 20px;
+}
+
+.logo{
+    background-image:url('/src/assets/instalogo.png');
+    background-repeat: no-repeat;
+    width:200px; height: 40px; display: inline-block;
+    margin-top: 10px;
+}
+
+::-webkit-input-placeholder {
+    color: lightgray;
+    text-align: center;
+}
+.pr-10{
+    padding-right: 150px;
+}
+
+.inputfile{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile + label {
+    cursor: pointer;
+}
+.w-65{
+    width: 65%;
+}
+
+
+.ta{
+    background-color:rgba(255,255,255, 1);
+}
+.capLab{
+    color: white;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+   .input-search{
+       display: none;
+   }
+}
+
