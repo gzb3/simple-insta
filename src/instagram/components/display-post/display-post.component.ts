@@ -36,7 +36,6 @@ import {Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChan
                                                                                         <button *ngIf="post?.likedByUser!==true" class="btn pt-0 pb-0 btn-link" type="button" (click)="setLike(post.id)" ><img class="icon" src="assets/like.png"/></button>
                                                                                         <button *ngIf="post.likedByUser" class="btn pt-0 pb-0 btn-link" type="button" (click)="setLike(post.id)" ><img class="icon" src="assets/like-pink.png"/></button>
                                                                                     </span>
-                                                                                    <span><button type="button" class="btn pt-0 pb-0 btn-link"><img class="icon" src="assets/comment.png"/></button></span>
                                                                             </section>
                                                                             
                                                                             <div> <span class="pl-3">{{post.likes}} likes</span></div>
