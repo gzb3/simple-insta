@@ -22,8 +22,11 @@ export class DataService {
 
 
     constructor(private socket:Socket,private userService:UserService,private router:Router) {
-        if (userService.getloggedUser())
-        this.loggedUserId=userService.getloggedUser().id
+
+    }
+    getLoggedUserId(){
+        if (this.userService.getloggedUser())
+            this.loggedUserId=this.userService.getloggedUser().id
     }
 
     setLike(postId,postAuthorId){
@@ -52,6 +55,7 @@ export class DataService {
     }
 
     follow(followId){
+        this.getLoggedUserId();
         this.loggedUserId ? this.socket.emit('follow',{userId:this.loggedUserId,userUsername:this.userService.getloggedUser().username, followId:followId}) : this.router.navigate(['/login']);
     }
 
@@ -60,6 +64,7 @@ export class DataService {
     }
 
     getProfile(username) {//user+posts
+        this.getLoggedUserId();
         this.socket.emit('getProfile',{username:username,loggedUserId:this.loggedUserId||''})
     }
 

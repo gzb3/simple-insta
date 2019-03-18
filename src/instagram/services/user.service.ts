@@ -23,6 +23,7 @@ export class UserService implements OnInit{
     ngOnInit(){}
 
     getloggedUser(){
+       // alert(localStorage.getItem('user'));
         return JSON.parse(localStorage.getItem('user'));
     }
     getLogUserObservable(){
@@ -42,6 +43,8 @@ export class UserService implements OnInit{
 
     logOut(){
         localStorage.removeItem('user');
+        this.router.navigate(['/']);
+
     }
 
     edit(user,filename,buffer){
