@@ -70,7 +70,6 @@ export class SignupComponent{
 
     user:User;
     errorMessage;
-    lu;
 
     constructor(private userService:UserService,private data:DataService){
         this.user={username:'', email:'', password:''};
@@ -81,7 +80,6 @@ export class SignupComponent{
     }
 
     onSubmit(){
-        //console.log(this.user);
         this.userService.signup(this.user);
     }
 }

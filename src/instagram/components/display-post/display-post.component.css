@@ -23,6 +23,7 @@ li{
 .post-art{
     border: 1px solid lightgray;
     flex-wrap: wrap;
+    background-color: black;
 }
 .comments-sidebar{
     background-color: white;

@@ -3,8 +3,8 @@ import {DataService} from '../../services/data.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-    selector:'instagram-following',
-    styleUrls:['following.component.css'],
+    selector:'instagram-followers',
+    styleUrls:['followers.component.css'],
     template:`
         <div class="customModal">
             <div class="foll-div">
@@ -12,7 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
                     <a routerLink="../" class="text-dark mr-2 mt-1 position-relative close " >X</a>
 
                     <div class="d-flex justify-content-center">
-                        <h4 class="">Following </h4>    
+                        <h4 class="">Followers </h4>    
                     </div>
                     
                 </div>
@@ -20,7 +20,7 @@ import {ActivatedRoute, Router} from '@angular/router';
                 <div>
                     <ul class="list-group">
 
-                        <li class="list-group-item" *ngFor="let user of followingUsers">
+                        <li class="list-group-item" *ngFor="let user of followers">
                             <div class="d-flex">
                                 <div>
                                     <img src="{{user.image}}" class="smallAvatar"/>
@@ -46,14 +46,14 @@ import {ActivatedRoute, Router} from '@angular/router';
     `
 })
 
-export class FollowingComponent implements OnDestroy{
+export class FollowersComponent implements OnDestroy{
 
-    followingUsers;
+    followers;
     _sub;
 
     constructor(private data:DataService,private route:ActivatedRoute,private router: Router){
-     this._sub=   this.data.following.subscribe(users=>this.followingUsers=users);
-            this.data.fetchFollowing(this.router.url.split("/")[1])
+        this._sub=   this.data.followers.subscribe(users=>this.followers=users);
+        this.data.fetchFollowers(this.router.url.split("/")[1])
     }
 
     ngOnDestroy(){

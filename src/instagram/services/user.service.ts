@@ -1,6 +1,5 @@
-import {Injectable, OnDestroy, OnInit} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {Socket} from 'ngx-socket-io';
-import {of} from 'rxjs';
 import {User} from '../models/user.model';
 import {Router} from '@angular/router';
 
@@ -23,7 +22,6 @@ export class UserService implements OnInit{
     ngOnInit(){}
 
     getloggedUser(){
-       // alert(localStorage.getItem('user'));
         return JSON.parse(localStorage.getItem('user'));
     }
     getLogUserObservable(){

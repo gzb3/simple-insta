@@ -51,12 +51,11 @@ export class NotificationComponent implements OnDestroy{
     user;
     notifications:any;
     _sub;
-    constructor(private userService:UserService,private data:DataService,private router:Router,private route:ActivatedRoute){
+    constructor(private userService:UserService,private data:DataService,private router:Router){
         this.user=userService.getloggedUser();
         this.userService.getNotifications(this.user.id);
         this._sub=this.userService.notifications.subscribe(n=>{
            this.notifications=JSON.parse(n);
-           console.log(this.notifications.length);
        });
     }
     ngOnDestroy(){

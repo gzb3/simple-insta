@@ -18,6 +18,7 @@ import {DisplayPostComponent} from './components/display-post/display-post.compo
 import {SignupComponent} from './containers/signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FollowingComponent} from './containers/following/following.component';
+import {FollowersComponent} from './containers/followers/followers.component';
 
 
 const routes:Routes=[
@@ -33,7 +34,8 @@ const routes:Routes=[
     {path:'p/:id',component:PostComponent},
     {path:':username',component:ProfileComponent,
         children:[
-            {path:'following',component:FollowingComponent}
+            {path:'following',component:FollowingComponent},
+            {path:'followers', component:FollowersComponent}
         ]},
     {path:'explore',
         children:[{path:'tags/:hashtag',component:HashtagComponent}]
@@ -55,7 +57,7 @@ const routes:Routes=[
         EditComponent,
         DisplayPostComponent,
         FollowingComponent,
-
+        FollowersComponent,
         SignupComponent,
         AccountsComponent,
         HashtagComponent

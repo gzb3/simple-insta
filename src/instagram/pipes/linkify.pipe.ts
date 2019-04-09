@@ -12,7 +12,6 @@ export class LinkifyPipe implements PipeTransform {
         return this._domSanitizer.bypassSecurityTrustHtml(this.stylize(value));
     }
 
-    // Modify this method according to your custom logic
     private stylize(text: string): string {
         let stylizedText: string = '';
         if (text && text.length > 0) {

@@ -35,7 +35,8 @@ import {UserService} from '../../services/user.service';
 
                                        <div class="d-flex flex-row p-2" >
                                            <span class="pff" >{{user?.posts}} posts</span>
-                                           <span class="pff">{{user?.followers}} followers</span>
+                                           <!--<span class="pff">{{user?.followers}} followers</span> -->
+                                           <a routerLink="followers" class="pff text-dark" (click)="showFollowing=true">followers: {{user?.followers}}</a>
                                            <a routerLink="following" class="pff text-dark" (click)="showFollowing=true">following: {{user?.following}}</a>
                                        </div>
                                        <div class="p-2">

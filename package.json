@@ -25,6 +25,7 @@
     "ngx-socket-io": "^2.1.1",
     "popper": "^1.0.1",
     "rxjs": "^6.0.0",
+    "sharp": "^0.22.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
