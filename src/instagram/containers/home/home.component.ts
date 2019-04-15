@@ -62,9 +62,7 @@ export class HomeComponent implements OnDestroy{
             this.data.addComment(this.feed[i].post.id,text,this.feed[i].author.id);
 
             inp.value='';
-        }else {
-            //route to login
-        }
+        }else {}
     }
 
     onLike(id,i){
@@ -77,8 +75,6 @@ export class HomeComponent implements OnDestroy{
             this.feed[i].post.likes=Number(this.feed[i].post.likes)-1;
         }
     }
-
-
     ngOnDestroy(){
         this.sub1.unsubscribe();
         this.sub2.unsubscribe();

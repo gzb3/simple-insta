@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {DataService} from '../../services/data.service';
 
 @Component({
@@ -7,7 +7,6 @@ import {DataService} from '../../services/data.service';
     ,styleUrls:['hashtag.component.css'],
     template:`
         <div>
-            
             <div class="d-flex justify-content-center mt-5">
                 <h2 >#{{hashtag}}</h2>
             </div>
@@ -25,7 +24,6 @@ export class HashtagComponent {
     hashtag;
     posts;
     constructor(private route:ActivatedRoute,private data:DataService){
-
         this.route.params.subscribe(params=>{
             this.hashtag=params['hashtag'];
             this.data.getTagPosts(this.hashtag);

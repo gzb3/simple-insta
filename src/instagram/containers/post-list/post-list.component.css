@@ -1,6 +1,5 @@
 
 .arrowButton{
-
     font-size: 40px;
     z-index: 3;
     font-weight: bold;
@@ -11,7 +10,6 @@
 
 
 }
-
 .wrapper{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -19,7 +17,6 @@
     justify-content: center;
 
 }
-
 .thumb-img{
     width: 100%;
     height: auto;
@@ -45,7 +42,6 @@
     font-size: larger;
     color: gray;
 }
-
 
   .smallImgDiv{
       background-color: black;

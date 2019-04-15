@@ -6,4 +6,5 @@ export interface Notification {
     href?:string;
     date?:string;
     read?:any
+
 }

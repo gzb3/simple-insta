@@ -20,7 +20,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FollowingComponent} from './containers/following/following.component';
 import {FollowersComponent} from './containers/followers/followers.component';
 
-
 const routes:Routes=[
     {path:'login',component:LoginComponent},
     {path:'signup',component:SignupComponent},
@@ -42,8 +41,6 @@ const routes:Routes=[
     },
 
 ];
-
-
 
 @NgModule({
     declarations: [

@@ -9,9 +9,7 @@ import {NotificationComponent} from '../instagram/containers/notifications/notif
 import {SearchSuggestionsComponent} from '../instagram/containers/search-suggestions/search-suggestions.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HashtagSearchSuggestionsComponent} from '../instagram/containers/hashtag-search-suggestions/hashtag-search-suggestions.component';
-
 const config: SocketIoConfig={url:'http://localhost:4444',options:{}};
-
 @NgModule({
   declarations: [
     AppComponent,

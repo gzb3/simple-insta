@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChange, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 
 @Component({
     selector:'app-display-post',
@@ -45,13 +45,9 @@ import {Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChan
                                                                                 <input #inp type="text" placeholder="  Add a comment..."  (keyup.enter)="addComment(inp)" class="form-control border-0 m-0 p-0">
                                                                             </section>
                                                                   </div>
-                                            
                                     </div>
                     
                 </aside>
-                
-                
-                
             </article>
         </div>
         

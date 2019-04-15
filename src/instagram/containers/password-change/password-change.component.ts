@@ -13,8 +13,7 @@ import {UserService} from '../../services/user.service';
                     {{errorMessage}}
                 </div>
             </div>
-
-
+            
             <form (ngSubmit)="onSubmit()" ngNativeValidate class="m-2">
 
                 <div class="form-group">
@@ -29,7 +28,6 @@ import {UserService} from '../../services/user.service';
                     >
                 </div>
 
-
                 <div class="form-group">
                     <label for="newPass">New Password</label>
                     <input
@@ -42,7 +40,6 @@ import {UserService} from '../../services/user.service';
                     >
                 </div>
 
-
                 <div class="form-group">
                     <label for="confirmPass">Confirm Password</label>
                     <input
@@ -54,11 +51,6 @@ import {UserService} from '../../services/user.service';
                             id="confirmPass"
                     >
                 </div>
-
-
-
-
-
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             
@@ -86,7 +78,6 @@ export class PasswordChangeComponent {
         }else{
             this.userService.changePassword({user:this.user,newPassword:this.newPassword});
         }
-
     }
 
 }

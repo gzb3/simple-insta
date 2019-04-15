@@ -35,19 +35,14 @@ import {ActivatedRoute, Router} from '@angular/router';
                         </li>
 
                     </ul>
-
-
                 </div>
-                
             </div>
-            
         </div>
        
     `
 })
 
 export class FollowersComponent implements OnDestroy{
-
     followers;
     _sub;
 

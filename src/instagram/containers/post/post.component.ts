@@ -19,7 +19,6 @@ import {Comment}from '../../models/comment.model';
         ></app-display-post>
     `
 })
-
 export class PostComponent implements OnDestroy,OnInit,OnChanges{
     comments:Comment[]=[];
     error;
@@ -55,8 +54,6 @@ export class PostComponent implements OnDestroy,OnInit,OnChanges{
             let text=inp.value;
             this.data.addComment(this.postId,text,this.post.author.id);
             inp.value='';
-        }else {
-            //route to login
         }
     }
     onLike(id){

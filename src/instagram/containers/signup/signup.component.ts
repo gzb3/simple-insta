@@ -67,7 +67,6 @@ import {DataService} from '../../services/data.service';
 })
 
 export class SignupComponent{
-
     user:User;
     errorMessage;
 
@@ -75,10 +74,7 @@ export class SignupComponent{
         this.user={username:'', email:'', password:''};
         userService.loggedUser.subscribe(u=>{console.log(u)});
         this.data.error.subscribe(e=>{console.log(e);if(e) this.errorMessage=e});
-
-
     }
-
     onSubmit(){
         this.userService.signup(this.user);
     }

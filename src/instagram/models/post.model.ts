@@ -8,4 +8,5 @@ export interface Post {
     likes?:any;
     comments?:string;
     likedByUser?:any;
+
 }

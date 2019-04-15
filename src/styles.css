@@ -14,7 +14,6 @@
     flex-direction: column;
 }
 
-
 .avatar{
     height: 150px;
     width: 150px;
@@ -28,7 +27,6 @@
     border-radius: 50%;
     margin: 0 20px 0 0 ;
 }
-
 .customModal{
     position: fixed;
     z-index: 2;

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {DataService} from '../../services/data.service';
 import {UserService} from '../../services/user.service';
@@ -139,7 +139,6 @@ export class NavigationComponent implements  OnDestroy {
     }
 
     addPost(c){
-        //uopste se ne poziva funkcija drugi put put
         let caption=c.value;
         let reader=new FileReader();
         reader.onload=(e)=> {

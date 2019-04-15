@@ -1,8 +1,7 @@
-import {Component, Input, OnDestroy} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {UserService} from '../../services/user.service';
-import {Notification} from '../../models/notification.model';
 import {DataService} from '../../services/data.service';
-import {ActivatedRoute, ActivatedRouteSnapshot, Router} from '@angular/router';
+import { Router} from '@angular/router';
 
 @Component({
     selector:'app-notification',

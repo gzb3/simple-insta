@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnDestroy} from '@angular/core';
 import {Post} from '../../models/post.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import { Location } from '@angular/common';
@@ -26,7 +26,7 @@ import { Location } from '@angular/common';
         </div>
     `
 })
-export class PostListComponent implements OnInit,OnChanges,OnDestroy {
+export class PostListComponent implements OnChanges,OnDestroy {
 
     currentPost;
     postModal=false;
@@ -47,8 +47,7 @@ export class PostListComponent implements OnInit,OnChanges,OnDestroy {
         }
     }
 
-    ngOnInit() {
-    }
+
     showPost(post){
         this.location.go('/p/'+post.id);
         this.currentPost=post;

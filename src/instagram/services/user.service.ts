@@ -1,10 +1,10 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Socket} from 'ngx-socket-io';
 import {User} from '../models/user.model';
 import {Router} from '@angular/router';
 
 @Injectable()
-export class UserService implements OnInit{
+export class UserService  {
 
     loggedUser=this.socket.fromEvent<User>('user');
     alert=this.socket.fromEvent<any>('alert');
@@ -18,8 +18,6 @@ export class UserService implements OnInit{
         if(localStorage.getItem('user'))
             this.socket.emit('loggedUser',JSON.parse(localStorage.getItem('user')));//Sends user to server so that it can include it into userSockets array
     }
-
-    ngOnInit(){}
 
     getloggedUser(){
         return JSON.parse(localStorage.getItem('user'));

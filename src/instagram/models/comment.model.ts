@@ -6,4 +6,5 @@ export interface Comment {
     authorUsername?:string;
     date?:string;
     author?:any;
+
 }

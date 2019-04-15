@@ -86,7 +86,6 @@ export class ProfileComponent implements OnDestroy {
             this.loggedUsername=userService.getloggedUser().username
     }
 
-
     ngOnDestroy(){
         this._sub.unsubscribe();
         this._sub2.unsubscribe();

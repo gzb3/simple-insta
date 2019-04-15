@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user.model';
-
 @Component({
     selector:'instagram-edit',
     styleUrls:['edit.component.css'],
@@ -70,19 +69,12 @@ import {User} from '../../models/user.model';
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        
-        
-        
-        
-        
     `
 })
 
 export class EditComponent{
-
     user:User;
     file;
-
     constructor(private userService:UserService){
         this.user=this.userService.getloggedUser();
     }
@@ -102,9 +94,5 @@ export class EditComponent{
             reader.readAsBinaryString(this.file);
         }else
             this.userService.edit(this.user,this.file.name,'')
-
-
-
-
     }
 }

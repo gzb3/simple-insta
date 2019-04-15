@@ -222,8 +222,6 @@ io.on("connection", socket => {
             }else{
                 socket.emit('user',res);
             }
-
-
         })
     });
     socket.on('changePassword',data=>{//user,newPassword

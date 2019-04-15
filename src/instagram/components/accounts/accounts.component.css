@@ -5,7 +5,6 @@ aside{
 article{
     flex: 4;
     border-left: 1px solid lightgray;
-
 }
 .container{
     max-width:950px;

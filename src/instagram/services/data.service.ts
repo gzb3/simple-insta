@@ -5,7 +5,6 @@ import {Router} from '@angular/router';
 
 @Injectable()
 export class DataService {
-
     posts=this.socket.fromEvent<any[]>('posts');
     profile=this.socket.fromEvent<any>('profile');
     error=this.socket.fromEvent<any>('err');

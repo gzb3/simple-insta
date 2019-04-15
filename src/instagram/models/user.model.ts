@@ -11,4 +11,5 @@ export interface User {
     bio?:string;
     date?:string
     followedByUser?:any;
+
 }

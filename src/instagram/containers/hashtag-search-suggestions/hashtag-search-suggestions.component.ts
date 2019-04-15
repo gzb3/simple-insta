@@ -22,23 +22,18 @@ import {DataService} from '../../services/data.service';
                         
                     </a>
                 </li>
-                
             </ul>
-            
         </div>
         
     `
 })
-
-export class HashtagSearchSuggestionsComponent implements OnChanges,OnInit{
+export class HashtagSearchSuggestionsComponent implements OnChanges{
     @Input() value;//input search value
     suggestions;
 
     constructor(private data:DataService){
         this.data.searchTagsResult.subscribe(tags=>this.suggestions=tags);
     }
-
-    ngOnInit(){}
 
     ngOnChanges(){
         this.data.search(this.value);
